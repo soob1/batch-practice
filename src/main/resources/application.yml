@@ -6,6 +6,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
     job:
-      enabled: false
+      names: ${job.name:NONE}
     jdbc:
       initialize-schema: always
+
+github:
+  user: user
+  token: token
