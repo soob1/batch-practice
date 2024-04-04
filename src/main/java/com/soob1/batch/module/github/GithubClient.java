@@ -1,4 +1,4 @@
-package com.soob1.batch.github;
+package com.soob1.batch.module.github;
 
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;

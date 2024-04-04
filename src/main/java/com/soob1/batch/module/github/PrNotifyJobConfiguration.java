@@ -1,4 +1,4 @@
-package com.soob1.batch.github;
+package com.soob1.batch.module.github;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
@@ -9,15 +9,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-public class PrNotificationJobConfiguration {
+public class PrNotifyJobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
-    private final PrNotificationStepConfiguration prNotificationStepConfiguration;
+    private final PrNotifyStepConfiguration prNotifyStepConfiguration;
 
     @Bean
     public Job prNotificationJob() {
         return jobBuilderFactory.get("prNotificationJob")
-                .start(prNotificationStepConfiguration.getRepoStep())
+                .start(prNotifyStepConfiguration.getPrListStep())
+                .next(prNotifyStepConfiguration.sendNotificationStep())
                 .incrementer(new RunIdIncrementer())
                 .build();
     }

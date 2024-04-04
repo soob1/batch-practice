@@ -28,6 +28,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-configration-processor'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.kohsuke:github-api:1.318'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
